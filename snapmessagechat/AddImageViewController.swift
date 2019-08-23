@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -49,6 +50,26 @@ class AddImageViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func nextTapped(_ sender: Any) {
+        
+        let imageFolder = Storage.storage().reference().child("images")
+        
+        if let image = imageView.image {
+            if let imageData = image.jpegData(compressionQuality: 0.75) {
+                
+                imageFolder.child("myPic.jpeg").putData(imageData, metadata: nil) { (metadata, error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        print("Upload Complete")
+                        self.performSegue(withIdentifier: "addImageToSelectUser", sender: nil)
+                    }
+                }
+                
+            }
+            
+            
+        }
+        
     }
     
 
