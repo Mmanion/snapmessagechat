@@ -72,13 +72,13 @@
 				0222CCE3231061C200797FA9 /* AddImageViewController.swift */,
 				0269559E230F4BCF00A29976 /* AppDelegate.swift */,
 				0222CCDF231056CB00797FA9 /* AuthViewController.swift */,
+				0222CCE523106C5000797FA9 /* SelectUserTableViewController.swift */,
+				0222CCE123105C8700797FA9 /* SnapsTableViewController.swift */,
 				026955A2230F4BCF00A29976 /* Main.storyboard */,
 				026955A5230F4BD100A29976 /* Assets.xcassets */,
 				026955A7230F4BD100A29976 /* LaunchScreen.storyboard */,
 				026955B0230F4F1000A29976 /* GoogleService-Info.plist */,
 				026955AA230F4BD100A29976 /* Info.plist */,
-				0222CCE123105C8700797FA9 /* SnapsTableViewController.swift */,
-				0222CCE523106C5000797FA9 /* SelectUserTableViewController.swift */,
 			);
 			path = snapmessagechat;
 			sourceTree = "<group>";

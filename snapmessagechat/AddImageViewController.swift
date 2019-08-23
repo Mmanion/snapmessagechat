@@ -17,16 +17,11 @@ class AddImageViewController: UIViewController, UIImagePickerControllerDelegate,
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
     }
-    
-    
-    
-    
+
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var descriptionTextField: UITextField!
-    
-    
     
     var imagePicker = UIImagePickerController()
     
