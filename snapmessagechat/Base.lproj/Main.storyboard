@@ -132,12 +132,83 @@
                                 <action selector="logoutTapped:" destination="xDH-5u-23Z" id="65m-qA-fAV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OtL-Xn-gLD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OtL-Xn-gLD">
+                            <connections>
+                                <segue destination="PB3-Ja-ZM5" kind="show" id="CGk-BF-9uP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeP-0g-S3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1986" y="134"/>
+        </scene>
+        <!--Add Image-->
+        <scene sceneID="qNn-bi-6vr">
+            <objects>
+                <viewController id="PB3-Ja-ZM5" customClass="AddImageViewController" customModule="snapmessagechat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Upy-Eu-oII">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="8kq-Mc-9xa">
+                                <rect key="frame" x="10" y="74" width="355" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8kq-Mc-9xa" secondAttribute="height" multiplier="120:67" id="CxN-dm-RsR"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UXN-XE-tpf">
+                                <rect key="frame" x="10" y="302" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieI-hj-n3I">
+                                <rect key="frame" x="142.5" y="367" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="1Py-e0-Be3"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextTapped:" destination="PB3-Ja-ZM5" eventType="touchUpInside" id="kxJ-23-FDP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8kq-Mc-9xa" firstAttribute="leading" secondItem="za0-lf-Hl9" secondAttribute="leading" constant="10" id="DKS-Zd-ueD"/>
+                            <constraint firstItem="za0-lf-Hl9" firstAttribute="trailing" secondItem="8kq-Mc-9xa" secondAttribute="trailing" constant="10" id="F7Z-dn-lHn"/>
+                            <constraint firstItem="8kq-Mc-9xa" firstAttribute="top" secondItem="za0-lf-Hl9" secondAttribute="top" constant="10" id="Yn8-Tf-7Tb"/>
+                            <constraint firstItem="ieI-hj-n3I" firstAttribute="top" secondItem="UXN-XE-tpf" secondAttribute="bottom" constant="35" id="fhM-cP-Pyj"/>
+                            <constraint firstItem="UXN-XE-tpf" firstAttribute="leading" secondItem="za0-lf-Hl9" secondAttribute="leading" constant="10" id="hWi-T6-94N"/>
+                            <constraint firstItem="ieI-hj-n3I" firstAttribute="centerX" secondItem="za0-lf-Hl9" secondAttribute="centerX" id="ouW-PS-VLy"/>
+                            <constraint firstItem="za0-lf-Hl9" firstAttribute="trailing" secondItem="UXN-XE-tpf" secondAttribute="trailing" constant="10" id="pVU-NA-iID"/>
+                            <constraint firstItem="UXN-XE-tpf" firstAttribute="top" secondItem="8kq-Mc-9xa" secondAttribute="bottom" constant="30" id="xJa-zJ-tZk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="za0-lf-Hl9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Image" id="NKr-Tq-Z1v">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="z5C-Eq-nfR">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="PB3-Ja-ZM5" id="oZT-dV-Blu"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="Y89-N1-JVa">
+                                <connections>
+                                    <action selector="photosTapped:" destination="PB3-Ja-ZM5" id="moM-qL-Mok"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="UXN-XE-tpf" id="lSD-Ga-LEp"/>
+                        <outlet property="imageView" destination="8kq-Mc-9xa" id="TVd-7y-7pP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgp-XB-2zZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2920.8000000000002" y="135.38230884557723"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iBN-Ha-I0k">
@@ -156,4 +227,7 @@
             <point key="canvasLocation" x="1036" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="picture" width="41.607223510742188" height="41.607223510742188"/>
+    </resources>
 </document>
