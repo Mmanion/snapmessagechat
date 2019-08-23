@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0222CCE0231056CB00797FA9 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222CCDF231056CB00797FA9 /* AuthViewController.swift */; };
+		0222CCE223105C8700797FA9 /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222CCE123105C8700797FA9 /* SnapsTableViewController.swift */; };
 		0269559F230F4BCF00A29976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0269559E230F4BCF00A29976 /* AppDelegate.swift */; };
 		026955A4230F4BCF00A29976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026955A2230F4BCF00A29976 /* Main.storyboard */; };
 		026955A6230F4BD100A29976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026955A5230F4BD100A29976 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		0222CCDF231056CB00797FA9 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		0222CCE123105C8700797FA9 /* SnapsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
 		0269559B230F4BCF00A29976 /* snapmessagechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapmessagechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0269559E230F4BCF00A29976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		026955A3230F4BCF00A29976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				026955A7230F4BD100A29976 /* LaunchScreen.storyboard */,
 				026955B0230F4F1000A29976 /* GoogleService-Info.plist */,
 				026955AA230F4BD100A29976 /* Info.plist */,
+				0222CCE123105C8700797FA9 /* SnapsTableViewController.swift */,
 			);
 			path = snapmessagechat;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0222CCE223105C8700797FA9 /* SnapsTableViewController.swift in Sources */,
 				0222CCE0231056CB00797FA9 /* AuthViewController.swift in Sources */,
 				0269559F230F4BCF00A29976 /* AppDelegate.swift in Sources */,
 			);

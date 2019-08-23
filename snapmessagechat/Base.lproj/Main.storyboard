@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2F-XU-Z6N">
                                         <rect key="frame" x="0.0" y="17" width="240" height="1"/>
@@ -52,7 +52,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlN-vt-QgS">
                                         <rect key="frame" x="0.0" y="17" width="240" height="1"/>
@@ -96,11 +96,64 @@
                         <outlet property="emailTextField" destination="VeL-e7-Y3n" id="htL-uk-9OL"/>
                         <outlet property="passwordTextField" destination="gBN-Kx-cRQ" id="eXj-Hf-2Db"/>
                         <outlet property="topButton" destination="NKR-Hw-pOj" id="00D-Us-tAO"/>
+                        <segue destination="zha-Yy-75Z" kind="presentation" identifier="authToSnaps" id="ZpS-MB-jaz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Snaps-->
+        <scene sceneID="e7W-eq-21b">
+            <objects>
+                <tableViewController id="xDH-5u-23Z" customClass="SnapsTableViewController" customModule="snapmessagechat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3um-Ob-jyB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nBe-oc-UAe">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nBe-oc-UAe" id="GKD-1x-cI9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xDH-5u-23Z" id="NhZ-z5-PMN"/>
+                            <outlet property="delegate" destination="xDH-5u-23Z" id="Zfg-uR-I61"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Snaps" id="5X2-px-o83">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="wl1-ab-Vvg">
+                            <connections>
+                                <action selector="logoutTapped:" destination="xDH-5u-23Z" id="65m-qA-fAV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OtL-Xn-gLD"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oeP-0g-S3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iBN-Ha-I0k">
+            <objects>
+                <navigationController id="zha-Yy-75Z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vGR-8B-2oe">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xDH-5u-23Z" kind="relationship" relationship="rootViewController" id="4mg-jh-AC4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PjB-Sy-pKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="134"/>
         </scene>
     </scenes>
 </document>
