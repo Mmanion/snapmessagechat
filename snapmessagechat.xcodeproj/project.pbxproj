@@ -16,6 +16,7 @@
 		026955A6230F4BD100A29976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026955A5230F4BD100A29976 /* Assets.xcassets */; };
 		026955A9230F4BD100A29976 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026955A7230F4BD100A29976 /* LaunchScreen.storyboard */; };
 		026955B1230F4F1000A29976 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 026955B0230F4F1000A29976 /* GoogleService-Info.plist */; };
+		02DA77DB23130FDF00A0D445 /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA77DA23130FDF00A0D445 /* ViewSnapViewController.swift */; };
 		C115A9B15E2ECA0BE69D0F23 /* Pods_snapmessagechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DADC4B3EA1007DC94793C9F4 /* Pods_snapmessagechat.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		026955A8230F4BD100A29976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		026955AA230F4BD100A29976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		026955B0230F4F1000A29976 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		02DA77DA23130FDF00A0D445 /* ViewSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		5227CB636820776B81EA4C30 /* Pods-snapmessagechat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapmessagechat.debug.xcconfig"; path = "Target Support Files/Pods-snapmessagechat/Pods-snapmessagechat.debug.xcconfig"; sourceTree = "<group>"; };
 		DA1E8F12DB895BE1DBB37CE5 /* Pods-snapmessagechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapmessagechat.release.xcconfig"; path = "Target Support Files/Pods-snapmessagechat/Pods-snapmessagechat.release.xcconfig"; sourceTree = "<group>"; };
 		DADC4B3EA1007DC94793C9F4 /* Pods_snapmessagechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapmessagechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 				0222CCDF231056CB00797FA9 /* AuthViewController.swift */,
 				0222CCE523106C5000797FA9 /* SelectUserTableViewController.swift */,
 				0222CCE123105C8700797FA9 /* SnapsTableViewController.swift */,
+				02DA77DA23130FDF00A0D445 /* ViewSnapViewController.swift */,
 				026955A2230F4BCF00A29976 /* Main.storyboard */,
 				026955A5230F4BD100A29976 /* Assets.xcassets */,
 				026955A7230F4BD100A29976 /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0222CCE223105C8700797FA9 /* SnapsTableViewController.swift in Sources */,
+				02DA77DB23130FDF00A0D445 /* ViewSnapViewController.swift in Sources */,
 				0222CCE623106C5000797FA9 /* SelectUserTableViewController.swift in Sources */,
 				0222CCE0231056CB00797FA9 /* AuthViewController.swift in Sources */,
 				0222CCE4231061C200797FA9 /* AddImageViewController.swift in Sources */,

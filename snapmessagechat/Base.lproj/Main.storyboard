@@ -112,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nBe-oc-UAe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier2" id="nBe-oc-UAe">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nBe-oc-UAe" id="GKD-1x-cI9">
@@ -138,10 +138,52 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="R7R-0b-mgv" kind="show" identifier="snapsToView" id="D0y-ay-hhg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeP-0g-S3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1986" y="134"/>
+        </scene>
+        <!--View Snap View Controller-->
+        <scene sceneID="iAB-Dc-CwI">
+            <objects>
+                <viewController id="R7R-0b-mgv" customClass="ViewSnapViewController" customModule="snapmessagechat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bdq-F5-4Yl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU7-0i-Px3">
+                                <rect key="frame" x="12" y="634" width="351" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BhS-bD-3xp">
+                                <rect key="frame" x="12" y="76" width="351" height="528"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BhS-bD-3xp" firstAttribute="leading" secondItem="pPK-kB-y84" secondAttribute="leading" constant="12" id="6EY-rI-UKH"/>
+                            <constraint firstItem="pPK-kB-y84" firstAttribute="trailing" secondItem="vU7-0i-Px3" secondAttribute="trailing" constant="12" id="JDb-R4-hli"/>
+                            <constraint firstItem="BhS-bD-3xp" firstAttribute="top" secondItem="pPK-kB-y84" secondAttribute="top" constant="12" id="Mbs-nk-2jQ"/>
+                            <constraint firstItem="pPK-kB-y84" firstAttribute="trailing" secondItem="BhS-bD-3xp" secondAttribute="trailing" constant="12" id="Xpk-pD-4hJ"/>
+                            <constraint firstItem="pPK-kB-y84" firstAttribute="bottom" secondItem="vU7-0i-Px3" secondAttribute="bottom" constant="12" id="axQ-HV-VYt"/>
+                            <constraint firstItem="vU7-0i-Px3" firstAttribute="leading" secondItem="pPK-kB-y84" secondAttribute="leading" constant="12" id="g8y-gF-KYJ"/>
+                            <constraint firstItem="vU7-0i-Px3" firstAttribute="top" secondItem="BhS-bD-3xp" secondAttribute="bottom" constant="30" id="vbb-sB-mmA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pPK-kB-y84"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="BhS-bD-3xp" id="F5e-gc-dqD"/>
+                        <outlet property="messageLabel" destination="vU7-0i-Px3" id="v6R-XL-KxE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZp-vx-94C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1985" y="1024"/>
         </scene>
         <!--Add Image-->
         <scene sceneID="qNn-bi-6vr">
