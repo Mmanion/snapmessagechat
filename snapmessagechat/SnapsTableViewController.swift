@@ -26,22 +26,20 @@ class SnapsTableViewController: UITableViewController {
                 self.snaps.append(snapshot)
                 self.tableView.reloadData()
                 
-            
-             if let snapDictionary = snapshot.value as? NSDictionary {
-                if let from = snapDictionary["from"] as? String {
-                    if let imageName = snapDictionary["imageName"] as? String {
-                        if let imageURL = snapDictionary["imageURL"] as? String {
-                            if let message = snapDictionary["message"] as? String {
-                                
-                            }
-                        }
+            Database.database().reference().child("users").child(uid).child("snaps").observe(.childRemoved) { (snapshot) in
+                
+                var index = 0
+                for snap in self.snaps {
+                    if snapshot.key == snap.key {
+                        self.snaps.remove(at: index)
                     }
+                    index += 1
                 }
-             }
-            
+            self.tableView.reloadData()
             }
         
         }
+    }
         
     }
     
@@ -59,7 +57,20 @@ class SnapsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "snapsToView", sender: nil)
+        let snap = snaps[indexPath.row]
+        
+        performSegue(withIdentifier: "snapsToView", sender: snap)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewSnapVC = segue.destination as? ViewSnapViewController {
+            
+            if let snapshot = sender as? DataSnapshot {
+            
+                viewSnapVC.snapshot = snapshot
+                
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

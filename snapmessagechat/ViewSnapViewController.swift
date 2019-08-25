@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import SDWebImage
+import FirebaseAuth
+import FirebaseStorage
 
 class ViewSnapViewController: UIViewController {
     
@@ -14,21 +18,40 @@ class ViewSnapViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
     
+    var snapshot : DataSnapshot?
+    
+    var imageName = ""
+    var snapID = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let snapshot = snapshot {
+        if let snapDictionary = snapshot.value as? NSDictionary {
+                if let imageName = snapDictionary["imageName"] as? String {
+                    if let imageURL = snapDictionary["imageURL"] as? String {
+                        if let message = snapDictionary["message"] as? String {
+                            messageLabel.text = message
+                            if let url = URL(string: imageURL) {
+                                imageView.sd_setImage(with: url)
+                            }
+                            self.imageName = imageName
+                            
+                            snapID = snapshot.key
+                        }
+                    }
+                }
+            }
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(_ animated: Bool) {
+        if let uid = Auth.auth().currentUser?.uid {
+            Database.database().reference().child("users").child(uid).child("snaps").child(snapID).removeValue()
+            
+            Storage.storage().reference().child("images").child(imageName).delete(completion: nil)
+        }
     }
-    */
 
 }
