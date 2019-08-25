@@ -43,7 +43,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                         if let error = error {
                             print(error)
                         } else {
-                            if let user = user { Database.database().reference().child("users").child(user.user.uid).child("email").setValue(email)
+                            if let user = user { Database.database().reference().child("users").child(user.uid).child("email").setValue(email)
                                 self.performSegue(withIdentifier: "authToSnaps", sender: nil)
                             }
                         }

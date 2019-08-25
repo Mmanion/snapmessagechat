@@ -7,10 +7,10 @@ target 'snapmessagechat' do
 
   # Pods for snapmessagechat
 
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Database'
+  pod 'Firebase/Core', '~> 4.0'
+  pod 'Firebase/Auth', '~> 4.0'
+  pod 'Firebase/Storage', '~> 4.0'
+  pod 'Firebase/Database', '~> 4.0'
   pod 'SDWebImage', '~> 4.0'
 
 end

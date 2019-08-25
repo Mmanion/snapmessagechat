@@ -23,6 +23,9 @@ class AddImageViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var descriptionTextField: UITextField!
     
+    var imageName = "\(NSUUID().uuidString).jpeg"
+    var imageURL = ""
+    
     var imagePicker = UIImagePickerController()
     
     
@@ -51,20 +54,36 @@ class AddImageViewController: UIViewController, UIImagePickerControllerDelegate,
         if let image = imageView.image {
             if let imageData = image.jpegData(compressionQuality: 0.75) {
                 
-                imageFolder.child("myPic.jpeg").putData(imageData, metadata: nil) { (metadata, error) in
+                imageFolder.child(imageName).putData(imageData, metadata: nil, completion: { (metadata, error) in
                     if let error = error {
                         print(error)
                     } else {
-                        print("Upload Complete")
-                        self.performSegue(withIdentifier: "addImageToSelectUser", sender: nil)
+                        
+                        if let imageURL = metadata?.downloadURL()?.absoluteString {
+                            self.imageURL = imageURL
+                            
+                            self.performSegue(withIdentifier: "addImageToSelectUser", sender: nil)
+                        }
+                        
+                        
                     }
                 }
-                
+                )
             }
+
+    }
+    }
             
-            
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let selectTVC = segue.destination as? SelectUserTableViewController {
+            selectTVC.imageURL = imageURL
+            selectTVC.imageName = imageName
+            if let message = descriptionTextField.text {
+            selectTVC.message = message
+            }
         }
-        
     }
     
 
